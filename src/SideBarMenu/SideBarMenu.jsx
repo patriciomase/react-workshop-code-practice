@@ -1,5 +1,9 @@
 import React from "react";
 
+import ListElement from "./ListElement.jsx";
+
+import "./sideBarMenu.css";
+
 const generalStyles = {
   color: "white",
   position: "fixed",
@@ -28,10 +32,10 @@ class SideBarMenu extends React.Component {
         onMouseOver={e => this.setState({ collapsed: false })}
       >
         <ul>
-          <li>A</li>
-          <li>B</li>
-          <li>C</li>
-          <li>D</li>
+          <ListElement>A</ListElement>
+          <ListElement>B</ListElement>
+          <ListElement>C</ListElement>
+          <ListElement>D</ListElement>
         </ul>
       </nav>
     );

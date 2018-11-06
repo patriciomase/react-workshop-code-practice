@@ -1,6 +1,6 @@
 import React from "react";
 
-import ListElement from "./ListElement.jsx";
+import { Link, withRouter } from "react-router-dom";
 
 import "./sideBarMenu.css";
 
@@ -34,10 +34,15 @@ class SideBarMenu extends React.Component {
           onMouseOver={e => this.setState({ collapsed: false })}
         >
           <ul>
-            <ListElement>A</ListElement>
-            <ListElement>B</ListElement>
-            <ListElement>C</ListElement>
-            <ListElement>D</ListElement>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/users">Users</Link>
+            </li>
           </ul>
         </nav>
       </React.Fragment>
@@ -45,4 +50,4 @@ class SideBarMenu extends React.Component {
   }
 }
 
-export default SideBarMenu;
+export default withRouter(SideBarMenu);

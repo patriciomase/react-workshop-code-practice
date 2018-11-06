@@ -27,17 +27,20 @@ class SideBarMenu extends React.Component {
     const overrideStyles = this.state.collapsed ? {} : { transform: "none" };
     const styles = { ...generalStyles, ...overrideStyles };
     return (
-      <nav
-        style={styles}
-        onMouseOver={e => this.setState({ collapsed: false })}
-      >
-        <ul>
-          <ListElement>A</ListElement>
-          <ListElement>B</ListElement>
-          <ListElement>C</ListElement>
-          <ListElement>D</ListElement>
-        </ul>
-      </nav>
+      <React.Fragment>
+        {!this.state.collapsed && <div className="overlay" />}
+        <nav
+          style={styles}
+          onMouseOver={e => this.setState({ collapsed: false })}
+        >
+          <ul>
+            <ListElement>A</ListElement>
+            <ListElement>B</ListElement>
+            <ListElement>C</ListElement>
+            <ListElement>D</ListElement>
+          </ul>
+        </nav>
+      </React.Fragment>
     );
   }
 }

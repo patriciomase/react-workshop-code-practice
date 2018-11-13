@@ -1,0 +1,18 @@
+video {
+  width: 30%;
+}
+
+button {
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  height: 40px;
+  margin: 3px;
+  opacity: 0.7;
+  transition: all 0.4 ease;
+  width: 50px;
+}
+
+button:hover {
+  opacity: 1;
+}

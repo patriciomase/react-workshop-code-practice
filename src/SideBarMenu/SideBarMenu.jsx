@@ -2,7 +2,7 @@ import React from "react";
 
 import { Link, withRouter } from "react-router-dom";
 
-import "./sideBarMenu.css";
+import "./styles.css";
 
 const generalStyles = {
   color: "white",

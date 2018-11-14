@@ -33,17 +33,17 @@ class SideBarMenu extends React.Component {
           <ul>
             <li>
               <Link to="/">
-                <i class="fa fa-home" aria-hidden="true" />
+                <i className="fa fa-home" aria-hidden="true" />
               </Link>
             </li>
             <li>
               <Link to="/about">
-                <i class="fa fa-info-circle" aria-hidden="true" />
+                <i className="fa fa-info-circle" aria-hidden="true" />
               </Link>
             </li>
             <li>
-              <Link to="/users">
-                <i class="fa fa-users" aria-hidden="true" />
+              <Link to="/videos">
+                <i className="fa fa-users" aria-hidden="true" />
               </Link>
             </li>
           </ul>

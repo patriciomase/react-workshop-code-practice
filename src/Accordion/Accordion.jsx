@@ -1,5 +1,6 @@
-const React = require("react");
-const PropTypes = require("prop-types");
+import React from "react";
+
+import "./styles.css";
 
 class Accordion extends React.Component {
   constructor(props) {
@@ -20,16 +21,11 @@ class Accordion extends React.Component {
 
     return (
       <div className="accordion" onClick={this.toggleVisibility}>
-        <div className="title">{title}</div>
+        <h2 className="title">{title}</h2>
         {!this.state.collapsed && children}
       </div>
     );
   }
 }
 
-Accordion.propTypes = {
-  title: PropTypes.node.isRequired,
-  children: PropTypes.node.isRequired
-};
-
-module.exports = Accordion;
+export default Accordion;

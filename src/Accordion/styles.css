@@ -1,0 +1,13 @@
+.accordion {
+  border: 1px solid lightgray;
+  margin: auto;
+  margin-bottom: 10px;
+  width: 80%;
+}
+
+p {
+  background: darkgray;
+  color: black;
+  margin: 0;
+  padding: 10px;
+}

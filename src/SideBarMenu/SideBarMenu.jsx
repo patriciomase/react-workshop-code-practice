@@ -29,19 +29,22 @@ class SideBarMenu extends React.Component {
     return (
       <React.Fragment>
         {!this.state.collapsed && <div className="overlay" />}
-        <nav
-          style={styles}
-          onMouseOver={e => this.setState({ collapsed: false })}
-        >
+        <nav style={styles} onMouseOver={e => this.setState({ collapsed: false })}>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/">
+                <i class="fa fa-home" aria-hidden="true" />
+              </Link>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <Link to="/about">
+                <i class="fa fa-info-circle" aria-hidden="true" />
+              </Link>
             </li>
             <li>
-              <Link to="/users">Users</Link>
+              <Link to="/users">
+                <i class="fa fa-users" aria-hidden="true" />
+              </Link>
             </li>
           </ul>
         </nav>

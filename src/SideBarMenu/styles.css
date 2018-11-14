@@ -12,13 +12,24 @@ li {
 }
 
 li.active {
-  color: lightsalmon;
   border-color: lightsalmon;
   border-width: 3px;
 }
 
 li:hover {
   border-color: white;
+}
+
+li a {
+  color: lightgray;
+  font-size: 28px;
+}
+
+li.active a {
+  color: lightsalmon;
+}
+
+li:hover a {
   color: white;
 }
 

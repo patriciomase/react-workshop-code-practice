@@ -4,18 +4,6 @@ import { Link, withRouter } from "react-router-dom";
 
 import "./styles.css";
 
-const generalStyles = {
-  color: "white",
-  position: "fixed",
-  left: 0,
-  height: "100%",
-  width: "80px",
-  background: "grey",
-  top: 0,
-  transform: "translateX(-79px)",
-  transition: "all 0.2s ease-in-out"
-};
-
 class SideBarMenu extends React.Component {
   constructor(props) {
     super(props);
@@ -24,8 +12,7 @@ class SideBarMenu extends React.Component {
     };
   }
   render() {
-    const overrideStyles = this.state.collapsed ? {} : { transform: "none" };
-    const styles = { ...generalStyles, ...overrideStyles };
+    const styles = this.state.collapsed ? {} : { transform: "none" };
     return (
       <React.Fragment>
         {!this.state.collapsed && <div className="overlay" />}

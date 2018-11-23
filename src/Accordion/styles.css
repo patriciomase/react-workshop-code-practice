@@ -5,6 +5,11 @@
   width: 80%;
 }
 
+.accordion .body {
+  display: flex;
+  padding: 10px;
+}
+
 p {
   background: darkgray;
   color: black;

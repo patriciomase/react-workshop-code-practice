@@ -15,8 +15,20 @@ class SideBarMenu extends React.Component {
     const styles = this.state.collapsed ? {} : { transform: "none" };
     return (
       <React.Fragment>
-        {!this.state.collapsed && <div className="overlay" />}
-        <nav style={styles} onMouseOver={e => this.setState({ collapsed: false })}>
+        {!this.state.collapsed && (
+          <div
+            className="overlay"
+            onMouseOver={e =>
+              setTimeout(() => {
+                this.setState({ collapsed: true });
+              }, 100)
+            }
+          />
+        )}
+        <nav
+          style={styles}
+          onMouseOver={e => this.setState({ collapsed: false })}
+        >
           <ul>
             <li>
               <Link to="/">

@@ -22,7 +22,7 @@ class Accordion extends React.Component {
     return (
       <div className="accordion" onClick={this.toggleVisibility}>
         <h2 className="title">{title}</h2>
-        {!this.state.collapsed && children}
+        <div className="body">{!this.state.collapsed && children}</div>
       </div>
     );
   }

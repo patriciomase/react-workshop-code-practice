@@ -1,5 +1,6 @@
 .accordion {
   border: 1px solid lightgray;
+  cursor: pointer;
   margin: auto;
   margin-bottom: 10px;
   width: 80%;

@@ -1,29 +1,45 @@
 import React from "react";
 
-import "./styles.css";
+import AccordionItem from "../AccordionItem/AccordionItem";
+import Picture from "../Picture/Picture";
 
 class Accordion extends React.Component {
+  static defaultProps = {
+    movies: []
+  };
+
   constructor(props) {
     super(props);
     this.state = {
-      collapsed: true
+      opened: null
     };
 
     this.toggleVisibility = this.toggleVisibility.bind(this);
   }
 
-  toggleVisibility(event) {
-    this.setState({ collapsed: !this.state.collapsed });
+  toggleVisibility(listElement) {
+    this.setState({
+      opened: listElement === this.state.opened ? null : listElement
+    });
   }
 
   render() {
-    const { title, children } = this.props;
-
+    const { movies } = this.props;
+    const { opened } = this.state;
     return (
-      <div className="accordion" onClick={this.toggleVisibility}>
-        <h2 className="title">{title}</h2>
-        <div className="body">{!this.state.collapsed && children}</div>
-      </div>
+      <React.Fragment>
+        {movies.map(v => (
+          <AccordionItem
+            key={v.title}
+            title={v.title}
+            collapsed={v.title !== opened}
+            onClick={this.toggleVisibility}
+          >
+            <Picture src={v.image} />
+            <p>{v.synopsis}</p>
+          </AccordionItem>
+        ))}
+      </React.Fragment>
     );
   }
 }

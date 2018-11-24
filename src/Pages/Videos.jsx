@@ -1,13 +1,19 @@
 import React from "react";
-import videosMock from "../videosMock.json";
 
 import Accordion from "../Accordion/Accordion.jsx";
+import DataFetcher from "../DataFetcher/DataFetcher.jsx";
+
+import { getVideos } from "../services/videoService.js";
 
 const Videos = () => (
-  <section className="videos">
-    <h1>Video Lists</h1>
-    <Accordion movies={videosMock} />
-  </section>
+  <DataFetcher service={getVideos}>
+    {data => (
+      <section className="videos">
+        <h1>Video Lists</h1>
+        <Accordion movies={data} />
+      </section>
+    )}
+  </DataFetcher>
 );
 
 export default Videos;

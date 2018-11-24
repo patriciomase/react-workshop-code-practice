@@ -4,6 +4,21 @@ import { Link, withRouter } from "react-router-dom";
 
 import "./styles.css";
 
+const menuStructure = [
+  {
+    to: "/",
+    icon: "fas fa-home"
+  },
+  {
+    to: "/about",
+    icon: "fas fa-info-circle"
+  },
+  {
+    to: "/videos",
+    icon: "fas fa-video"
+  }
+];
+
 class SideBarMenu extends React.Component {
   constructor(props) {
     super(props);
@@ -13,6 +28,7 @@ class SideBarMenu extends React.Component {
   }
   render() {
     const styles = this.state.collapsed ? {} : { transform: "none" };
+    const { pathname } = this.props.location;
     return (
       <React.Fragment>
         {!this.state.collapsed && (
@@ -30,21 +46,15 @@ class SideBarMenu extends React.Component {
           onMouseOver={e => this.setState({ collapsed: false })}
         >
           <ul>
-            <li>
-              <Link to="/">
-                <i className="fas fa-home" />
-              </Link>
-            </li>
-            <li>
-              <Link to="/about">
-                <i className="fas fa-info-circle" />
-              </Link>
-            </li>
-            <li>
-              <Link to="/videos">
-                <i className="fas fa-video" />
-              </Link>
-            </li>
+            {menuStructure.map(elem => {
+              return (
+                <li className={elem.to === pathname ? "active" : ""}>
+                  <Link to={elem.to}>
+                    <i className={elem.icon} />
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </nav>
       </React.Fragment>
